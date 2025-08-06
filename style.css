@@ -1,0 +1,122 @@
+/* Загальні налаштування */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fef7e0;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header {
+  background-color: #ffb300;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.logo img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.app {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-container {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.app-image {
+  width: 120px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.app-content {
+  flex: 1;
+}
+
+.app h2 {
+  color: #0077b6;
+  margin-top: 0;
+}
+
+.platforms {
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #0070f3;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #0059c1;
+}
+
+footer {
+  text-align: center;
+  background-color: #eeeeee;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+a {
+  color: #0077b6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .app {
+    padding: 1rem;
+  }
+
+  .app-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .app-content {
+    text-align: left;
+  }
+}
