@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
+ 
   <meta name="description" content="Get real-time minutely, hourly and daily weather forecasts with Radar Now and MINUTE Forecast apps. Perfect for planning outdoor activities. Download now for iPhone, iPad and Mac.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://amazing-apps.net/" />
@@ -59,5 +59,418 @@
     <p><a href="mailto:hello@rainai.app" class="contact-link">Contact</a> © 2024-2025</p>
     <a href="terms.html" class="terms-button">Terms</a>
   </footer>
+</body>
+</html>
+ -->
+
+
+ <!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CalAI — демо-лендинг у подібному стилі (оригінальна версія)</title>
+  <meta name="description" content="Оригінальний демо-лендинг у стилі сучасного AI-продукту: герой, фічі, ціни, FAQ." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0d12;
+      --panel: #121622;
+      --muted: #8b93a7;
+      --text: #e7ecf4;
+      --primary: #7c5cff;
+      --primary-2: #5b8cff;
+      --accent: #00d2a8;
+      --ring: rgba(124,92,255,.35);
+      --card: #0f1220;
+      --border: #21273a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(1000px 500px at -10% 10%, rgba(91,140,255,.15), transparent 60%),
+        var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px, 92vw); margin:0 auto}
+    .btn{
+      display:inline-flex; align-items:center; gap:.6rem;
+      padding:.85rem 1.1rem; border-radius:999px; font-weight:600;
+      border:1px solid transparent; cursor:pointer; transition:.2s ease;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+      color:white; box-shadow: 0 6px 20px rgba(92,115,255,.35);
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 10px 24px rgba(92,115,255,.45)}
+    .btn.secondary{
+      background:transparent; color:var(--text);
+      border-color:var(--border)
+    }
+    .btn.secondary:hover{border-color:#2e3651; background:#0f1424}
+    header{
+      position:sticky; top:0; z-index:30; backdrop-filter:saturate(120%) blur(12px);
+      background:rgba(11,13,18,.45); border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; padding:1rem 0
+    }
+    .brand{display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.2px}
+    .brand .logo{
+      width:34px; height:34px; border-radius:10px;
+      background: conic-gradient(from 210deg at 50% 50%, var(--primary), var(--primary-2), var(--accent));
+      box-shadow:0 6px 18px rgba(124,92,255,.4), inset 0 0 30px rgba(255,255,255,.08)
+    }
+    .nav-links{display:flex; gap:1rem; align-items:center}
+    .nav-links a{padding:.5rem .8rem; border-radius:10px; color:var(--muted)}
+    .nav-links a:hover{background:#101425; color:var(--text)}
+    .mobile-toggle{display:none}
+    /* Hero */
+    .hero{padding: clamp(3rem, 6vw, 6rem) 0 2rem}
+    .hero .grid{display:grid; grid-template-columns: 1.1fr .9fr; gap: clamp(1.2rem, 3vw, 2rem); align-items:center}
+    h1{
+      font-size: clamp(2rem, 3.6vw, 3.4rem);
+      line-height:1.08; margin: 0 0 1rem; letter-spacing:-.02em
+    }
+    .subtitle{color:var(--muted); font-size: clamp(1rem, 1.4vw, 1.1rem); max-width:60ch}
+    .chip{
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.35rem .6rem; border:1px solid #2a3149; border-radius:999px; color:#cfd6ea;
+      background: rgba(15,20,36,.6); margin-bottom: .9rem;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.02)
+    }
+    .hero-cta{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.1rem}
+    .meta{display:flex; gap:1rem; margin-top:.9rem; color:var(--muted); font-size:.95rem}
+    .meta .dot{width:6px;height:6px;border-radius:50%;background:#47507a; align-self:center}
+    /* Mock panel */
+    .panel{
+      background:linear-gradient(180deg, #13182a, #0d1221);
+      border:1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: .9rem; position:relative;
+    }
+    .panel::after{
+      content:""; position:absolute; inset: -1px; border-radius:inherit; pointer-events:none;
+      background: radial-gradient(600px 200px at 20% -10%, rgba(124,92,255,.25), transparent 60%);
+      mask: linear-gradient(#000, transparent 70%);
+    }
+    .window{
+      background: var(--card); border:1px solid #1a2034; border-radius: 12px; overflow:hidden
+    }
+    .window .bar{display:flex; gap:.4rem; padding:.6rem .7rem; background:#12172a; border-bottom:1px solid #1b2340}
+    .dot-red,.dot-yellow,.dot-green{width:10px;height:10px;border-radius:50%}
+    .dot-red{background:#ff605c}.dot-yellow{background:#ffbd44}.dot-green{background:#00ca4e}
+    .window .screen{aspect-ratio: 16/10; display:grid; place-items:center; padding:1rem}
+    .mock{
+      width:100%; height:100%; border-radius:8px; border:1px dashed #2a3353;
+      display:grid; place-items:center; color:#a5b0cf; font-weight:600
+    }
+    /* Logos row */
+    .logos{
+      display:grid; grid-template-columns: repeat(6, 1fr); gap:1rem; align-items:center;
+      opacity:.85; filter: saturate(85%);
+    }
+    .logo-box{
+      background: #0e1324; border:1px solid #1c2340; border-radius:12px; padding:.9rem; text-align:center
+    }
+    /* Features */
+    .section{padding: clamp(2.5rem, 6vw, 5rem) 0}
+    .section h2{font-size: clamp(1.6rem, 2.6vw, 2.2rem); margin:0 0 .6rem}
+    .section p.lead{color:var(--muted); max-width:70ch}
+    .features{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; margin-top:1rem}
+    .card{background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:1rem; box-shadow:var(--shadow)}
+    .icon{width:36px;height:36px;border-radius:10px; display:grid; place-items:center; margin-bottom:.7rem; background:#10162a; border:1px solid #242b45}
+    .card h3{margin:.2rem 0 .4rem; font-size:1.05rem}
+    .card p{color:var(--muted)}
+    /* Pricing */
+    .pricing{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; margin-top:1rem}
+    .price{display:flex; align-items:baseline; gap:.4rem; margin:.3rem 0 1rem}
+    .price .num{font-size:2rem; font-weight:800}
+    .badge{display:inline-block; padding:.25rem .6rem; border:1px solid #2b3350; border-radius:999px; color:#cdd5ee; background:#0f1426; font-size:.8rem}
+    /* FAQ */
+    .faq{display:grid; grid-template-columns: 1fr 1fr; gap:1rem; margin-top:1rem}
+    details{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:.9rem}
+    summary{cursor:pointer; font-weight:600; outline:none}
+    details[open]{box-shadow:0 0 0 2px var(--ring)}
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06); padding:2rem 0; color:#a3acc5}
+    .footer-grid{display:grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap:1rem}
+    .small{font-size:.9rem; color:var(--muted)}
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero .grid{grid-template-columns:1fr}
+      .logos{grid-template-columns: repeat(3, 1fr)}
+      .features{grid-template-columns:1fr 1fr}
+      .pricing{grid-template-columns:1fr; }
+      .faq{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns: 1fr 1fr}
+      .nav-links{display:none}
+      .mobile-toggle{display:inline-flex}
+    }
+    @media (max-width: 560px){
+      .logos{grid-template-columns: repeat(2, 1fr)}
+      .features{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true"></div>
+        <span>CalAI</span>
+      </a>
+      <nav class="nav-links" aria-label="Основна навігація">
+        <a href="#features">Можливості</a>
+        <a href="#pricing">Ціни</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Контакти</a>
+      </nav>
+      <button class="btn secondary mobile-toggle" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">Меню</button>
+    </div>
+    <div class="container" id="mobileMenu" hidden>
+      <div style="display:flex; gap:.6rem; padding:0 0 1rem;">
+        <a class="btn secondary" href="#features">Можливості</a>
+        <a class="btn secondary" href="#pricing">Ціни</a>
+        <a class="btn secondary" href="#faq">FAQ</a>
+        <a class="btn" href="#contact">Спробувати</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container grid">
+        <div>
+          <span class="chip">⚡ Нове: Генерація контенту з ваших даних</span>
+          <h1>Прискорте роботу з AI-асистентом, що розуміє ваш бізнес</h1>
+          <p class="subtitle">Створюйте тексти, узагальнення та відповіді на запити з урахуванням вашого контенту, тону та процесів. Налаштовується за хвилини, масштабується на команду.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#pricing">Почати безкоштовно</a>
+            <a class="btn secondary" href="#features">Дивитися можливості</a>
+          </div>
+          <div class="meta">
+            <span>14-денна пробна версія</span><span class="dot"></span>
+            <span>Без картки</span><span class="dot"></span>
+            <span>GDPR-френдлі</span>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="window">
+            <div class="bar">
+              <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            </div>
+            <div class="screen">
+              <div class="mock">
+                <div>
+                  <div style="text-align:center; margin-bottom:.6rem;">Демо екран</div>
+                  <img src="https://picsum.photos/seed/ai/960/540" alt="Демо зображення" style="width:100%; max-width:720px; border-radius:10px; border:1px solid #1e2540;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section>
+      <div class="container">
+        <div class="logos">
+          <div class="logo-box">Astra</div>
+          <div class="logo-box">Vertex</div>
+          <div class="logo-box">Flowbit</div>
+          <div class="logo-box">NeoLabs</div>
+          <div class="logo-box">Nimbus</div>
+          <div class="logo-box">Quanta</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="container">
+        <h2>Можливості</h2>
+        <p class="lead">Будуйте власні сценарії, підключайте документи та бази знань, отримуйте точні відповіді, а не «галюцинації».</p>
+        <div class="features">
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M4 12h16M12 4v16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Knowledge Hub</h3>
+            <p>Імпорт файлів, сторінок і нотаток. Автоматичний індекс та пошук по змісту.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2"/>
+                <path d="M12 7v5l3 3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Автоматизації</h3>
+            <p>Запускайте ланцюжки: аналіз → генерація → публікація. Інтеграції через вебхуки.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M4 7h16v10H4z" stroke="white" stroke-width="2"/><path d="M4 9h16" stroke="white" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Тони бренду</h3>
+            <p>Задайте голос і стилі — асистент утримує їх у кожній відповіді та шаблоні.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2>Тарифи</h2>
+        <p class="lead">Почніть безкоштовно, а коли команда виросте — просто додайте місця.</p>
+        <div class="pricing">
+          <div class="card">
+            <span class="badge">Starter</span>
+            <div class="price"><span class="num">$0</span><span>/міс</span></div>
+            <ul class="small">
+              <li>1 робочий простір</li>
+              <li>2 тис. запитів на місяць</li>
+              <li>Базові інтеграції</li>
+            </ul>
+            <div style="margin-top:1rem"><a class="btn" href="#">Почати</a></div>
+          </div>
+          <div class="card" style="outline:2px solid var(--ring)">
+            <span class="badge">Pro</span>
+            <div class="price"><span class="num">$29</span><span>/міс</span></div>
+            <ul class="small">
+              <li>До 5 користувачів</li>
+              <li>Необмежені джерела знань</li>
+              <li>Пріоритетна підтримка</li>
+            </ul>
+            <div style="margin-top:1rem"><a class="btn" href="#">Оформити</a></div>
+          </div>
+          <div class="card">
+            <span class="badge">Business</span>
+            <div class="price"><span class="num">$79</span><span>/міс</span></div>
+            <ul class="small">
+              <li>SSO/SAML</li>
+              <li>Ролі та права доступу</li>
+              <li>Виділена інфраструктура</li>
+            </ul>
+            <div style="margin-top:1rem"><a class="btn" href="#">Зв’язатися</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2>Питання та відповіді</h2>
+        <div class="faq">
+          <details>
+            <summary>Чи зберігаються мої дані конфіденційними?</summary>
+            <div class="small">Так, дані ізольовані в межах вашого простору. Є можливість самостійного видалення індексу.</div>
+          </details>
+          <details>
+            <summary>Чи є API?</summary>
+            <div class="small">Є REST-ендпоінти та вебхуки для інтеграцій із CRM, CMS і вашими сервісами.</div>
+          </details>
+          <details>
+            <summary>Як рахуються запити?</summary>
+            <div class="small">Кожне звернення до моделі або індексу — це 1 запит. У Pro/Business доступні підвищені ліміти.</div>
+          </details>
+          <details>
+            <summary>Підтримка мов?</summary>
+            <div class="small">Українська, англійська, польська, німецька. Інші — за запитом.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="contact">
+      <div class="container" style="display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem; align-items:center">
+        <div>
+          <h2>Готові спробувати?</h2>
+          <p class="lead">Підключіть свої джерела знань, задайте тон бренду та отримайте перші результати сьогодні.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#">Створити акаунт</a>
+            <a class="btn secondary" href="#">Запланувати демо</a>
+          </div>
+        </div>
+        <form class="card" onsubmit="event.preventDefault(); alert('Дякуємо! Ми з вами зв’яжемося.')" aria-label="Форма зворотного зв’язку">
+          <label class="small" for="email">Email</label>
+          <input id="email" required type="email" placeholder="you@company.com"
+                 style="width:100%; margin:.4rem 0 1rem; padding:.8rem 1rem; border-radius:12px; color:var(--text);
+                        background:#0c1224; border:1px solid #1c2340; outline:none; box-shadow:none">
+          <label class="small" for="msg">Повідомлення</label>
+          <textarea id="msg" rows="4" placeholder="Коротко опишіть задачу"
+                    style="width:100%; margin:.4rem 0 1rem; padding:.8rem 1rem; border-radius:12px; color:var(--text);
+                           background:#0c1224; border:1px solid #1c2340; outline:none;"></textarea>
+          <button class="btn" type="submit">Надіслати</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand"><div class="logo"></div><span>CalAI</span></div>
+        <p class="small" style="margin-top:.6rem">© <span id="year"></span> CalAI. Усі права захищено.</p>
+      </div>
+      <div>
+        <div class="small" style="font-weight:700; color:#cfd6ea">Продукт</div>
+        <ul class="small" style="list-style:none; padding:0; margin:.4rem 0 0">
+          <li><a href="#features">Можливості</a></li>
+          <li><a href="#pricing">Ціни</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="small" style="font-weight:700; color:#cfd6ea">Компанія</div>
+        <ul class="small" style="list-style:none; padding:0; margin:.4rem 0 0">
+          <li><a href="#">Про нас</a></li>
+          <li><a href="#">Вакансії</a></li>
+          <li><a href="#">Контакти</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="small" style="font-weight:700; color:#cfd6ea">Правові</div>
+        <ul class="small" style="list-style:none; padding:0; margin:.4rem 0 0">
+          <li><a href="#">Політика конфіденційності</a></li>
+          <li><a href="#">Умови використання</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Поточний рік у футері
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Мобільне меню
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const open = menu.hasAttribute('hidden') ? false : true;
+        if (open) { menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+        else { menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+      });
+    }
+  </script>
 </body>
 </html>
