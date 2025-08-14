@@ -64,7 +64,7 @@
  -->
 
 
- <!doctype html>
+<!--  <!doctype html>
 <html lang="uk">
 <head>
   <meta charset="utf-8" />
@@ -247,7 +247,7 @@
   </header>
 
   <main>
-    <!-- HERO -->
+ 
     <section class="hero">
       <div class="container grid">
         <div>
@@ -282,7 +282,7 @@
       </div>
     </section>
 
-    <!-- LOGOS -->
+   
     <section>
       <div class="container">
         <div class="logos">
@@ -296,7 +296,7 @@
       </div>
     </section>
 
-    <!-- FEATURES -->
+   
     <section id="features" class="section">
       <div class="container">
         <h2>Можливості</h2>
@@ -334,7 +334,7 @@
       </div>
     </section>
 
-    <!-- PRICING -->
+   
     <section id="pricing" class="section">
       <div class="container">
         <h2>Тарифи</h2>
@@ -374,7 +374,7 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+  
     <section id="faq" class="section">
       <div class="container">
         <h2>Питання та відповіді</h2>
@@ -399,7 +399,7 @@
       </div>
     </section>
 
-    <!-- CTA -->
+   
     <section class="section" id="contact">
       <div class="container" style="display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem; align-items:center">
         <div>
@@ -474,3 +474,382 @@
   </script>
 </body>
 </html>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutriLens — Рахуй калорії камерою</title>
+  <meta name="description" content="NutriLens — український застосунок, що визначає калорії та макроси з фото, штрих-коду або опису. Швидко, зручно, без нудних таблиць." />
+  <meta property="og:title" content="NutriLens — Рахуй калорії камерою" />
+  <meta property="og:description" content="AI-аналіз зображень, синхронізація з фітнес-гаджетами, темна тема. Спробуй безкоштовно!" />
+  <meta name="theme-color" content="#6f4df6" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0b12; /* дуже темний фон */
+      --surface: #12121b;
+      --text: #e9e9ef;
+      --muted: #b7b7c6;
+      --brand: #7b61ff; /* фіолетовий акцент схожий за настроєм */
+      --brand-2: #ff5cc3; /* рожевий градієнтний акцент */
+      --ok: #60d394;
+      --warn: #ffd166;
+      --shadow: 0 10px 30px rgba(20,16,60,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background: radial-gradient(1200px 800px at 70% -10%, rgba(123,97,255,.35), transparent 60%), radial-gradient(800px 600px at 10% 10%, rgba(255,92,195,.25), transparent 60%), var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1160px; margin:0 auto; padding:0 20px}
+
+    /* Topbar */
+    .topbar{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px); background:rgba(11,11,18,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px}
+    .logo{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:var(--shadow)}
+    .menu{display:flex; gap:22px; align-items:center}
+    .menu a{color:var(--muted); font-weight:600}
+    .menu a.active, .menu a:hover{color:var(--text)}
+    .cta{padding:10px 16px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; font-weight:700; box-shadow:var(--shadow)}
+
+    /* Hero */
+    .hero{padding:88px 0 40px}
+    .hero-grid{display:grid; grid-template-columns: 1.2fr 1fr; gap:40px; align-items:center}
+    .eyebrow{display:inline-flex; align-items:center; gap:10px; padding:6px 10px; border-radius:999px; background:rgba(123,97,255,.12); color:#d7d2ff; font-weight:700; letter-spacing:.2px}
+    h1{font-size: clamp(36px, 5vw, 64px); line-height:1.05; margin:14px 0 12px}
+    .lead{font-size: clamp(16px, 1.4vw, 20px); color:var(--muted); max-width:56ch}
+    .badges{display:flex; gap:12px; margin:22px 0 6px; flex-wrap:wrap}
+    .badge{display:inline-flex; align-items:center; gap:10px; background:#fff; color:#000; padding:10px 14px; border-radius:14px; font-weight:700}
+    .badge svg{width:20px;height:20px}
+    .statline{display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); font-weight:600; margin-top:8px}
+
+    .phone{position:relative; border-radius:32px; padding:18px; background:linear-gradient(180deg,#1b1b27,#10101a); box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06)}
+    .phone-screen{border-radius:22px; overflow:hidden; aspect-ratio:9/19; background:#000 url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop') center/cover}
+
+    /* Social proof strip */
+    .strip{padding:26px 0; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0))}
+    .strip-inner{display:flex; gap:24px; overflow:auto; scrollbar-width:none}
+    .chip{flex:0 0 auto; padding:10px 14px; border-radius:999px; background:#171724; color:#d6d6e5; border:1px solid rgba(255,255,255,.08); font-weight:600}
+
+    /* Features */
+    .section{padding:80px 0}
+    .section h2{font-size: clamp(28px, 4vw, 44px); line-height:1.1; margin:0 0 10px}
+    .kicker{color:var(--muted); margin-bottom:26px}
+    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+    .card{background:var(--surface); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .card h3{margin:8px 0 8px}
+    .card p{color:var(--muted)}
+    .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,92,195,.15); color:#ffd6ef; font-weight:700; letter-spacing:.2px}
+
+    /* Integrations */
+    .logos{display:grid; grid-template-columns:repeat(6,1fr); gap:12px}
+    .logo-tile{background:#171724; border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:18px; display:flex; align-items:center; justify-content:center; font-weight:700; color:#dcdcf3}
+
+    /* Dark mode callout */
+    .callout{display:grid; grid-template-columns: 1.1fr 1fr; gap:24px; align-items:center}
+    .callout .panel{background:linear-gradient(135deg, rgba(123,97,255,.25), rgba(255,92,195,.18)); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:22px}
+
+    /* Testimonials */
+    .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+    .quote{background:var(--surface); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:18px; display:flex; gap:14px}
+    .avatar{width:46px; height:46px; border-radius:50%; background:url('https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=400&auto=format&fit=crop') center/cover}
+
+    /* Ratings */
+    .ratings{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .rating-card{background:#171724; border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:18px; text-align:center}
+    .stars{font-size:20px}
+
+    /* CTA */
+    .cta-banner{margin-top:14px; background:linear-gradient(135deg, rgba(123,97,255,.35), rgba(255,92,195,.3)); border:1px solid rgba(255,255,255,.18); border-radius:22px; padding:26px; display:grid; grid-template-columns: 1.2fr .8fr; align-items:center; gap:18px}
+    .cta-banner h3{margin:0}
+
+    /* Footer */
+    footer{padding:50px 0; border-top:1px solid rgba(255,255,255,.08)}
+    .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:16px}
+    .muted{color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid, .callout, .cta-banner{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr 1fr}
+      .logos{grid-template-columns:repeat(3,1fr)}
+      .ratings{grid-template-columns:1fr 1fr}
+      .grid-2{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 620px){
+      .features{grid-template-columns:1fr}
+      .logos{grid-template-columns:repeat(2,1fr)}
+      .ratings{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container nav" role="navigation" aria-label="Основна навігація">
+      <a class="brand" href="#">
+        <span class="logo" aria-hidden="true"></span>
+        <span>NutriLens</span>
+      </a>
+      <nav class="menu">
+        <a href="#features" class="active">Можливості</a>
+        <a href="#integrations">Інтеграції</a>
+        <a href="#testimonials">Відгуки</a>
+        <a href="#download" class="cta">Спробувати безкоштовно</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">AI харчування без Excel</span>
+        <h1>Рахуй калорії <br/>просто з фото</h1>
+        <p class="lead">NutriLens визначає енергетичну цінність та макроси зі світлини, штрих‑коду або короткого опису. Менше рутини — більше реального прогресу.</p>
+        <div class="badges" id="download">
+          <a class="badge" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.27 6.73a4.35 4.35 0 0 0-3.4-1.76c-1.6-.1-3.15.93-3.97.93-.83 0-2.07-.91-3.41-.89-1.74.03-3.34 1.01-4.23 2.53-1.83 3.04-.47 7.52 1.3 9.98.86 1.2 1.89 2.56 3.25 2.5 1.31-.05 1.81-.81 3.39-.81 1.58 0 2.03.81 3.42.79 1.42-.03 2.31-1.22 3.16-2.44a10 10 0 0 0 1.45-2.96 4.4 4.4 0 0 1-2.96-4.01 4.37 4.37 0 0 1 1.99-3.86Z"/></svg>
+            App Store
+          </a>
+          <a class="badge" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 3.5v17l10.5-8.5L1 3.5Zm11.8 9.5 8.7 8.7V3.3l-8.7 9.7ZM2.5 21h.9l8.3-6.7-2.4-1.9L2.5 21Zm9.3-9.1 2.4-1.9L3.4 3h-.9l9.3 8.9Z"/></svg>
+            Google Play
+          </a>
+        </div>
+        <div class="statline" aria-live="polite">
+          <span>⭐ 4.9 / 5</span>
+          <span>•</span>
+          <span>5 млн+ встановлень</span>
+          <span>•</span>
+          <span>Безкоштовний старт 3 дні</span>
+        </div>
+      </div>
+      <div class="phone" aria-hidden="true">
+        <div class="phone-screen"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Social proof strip -->
+  <div class="strip">
+    <div class="container strip-inner" aria-label="Стрічка довіри">
+      <span class="chip">Поради від тренерів</span>
+      <span class="chip">Швидкий сканер штрих‑коду</span>
+      <span class="chip">Розпізнавання обʼєму</span>
+      <span class="chip">Імпорт з годинників</span>
+      <span class="chip">Теми: світла/темна</span>
+      <span class="chip">Синхронізація між пристроями</span>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2>Що вміє NutriLens</h2>
+      <p class="kicker">Ми зібрали інструменти, які реально економлять час, без зайвого мішури.</p>
+      <div class="features">
+        <div class="card">
+          <span class="pill">AI аналіз фото</span>
+          <h3>Зроби кадр — отримай макроси</h3>
+          <p>Алгоритми оцінюють склад тарілки та орієнтовний обʼєм порцій, щоб швидко порахувати калорії, білки, жири та вуглеводи.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Штрих‑код</span>
+          <h3>Сканер продуктів</h3>
+          <p>Миттєво знаходь харчову цінність за UPC/EAN. Додавай власні позиції та рецепти, якщо не знайшлось у базі.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Голос/текст</span>
+          <h3>Опиши — і ми порахуємо</h3>
+          <p>Скажи або напиши: «курка 150г, рис 100г» — додаток збере раціон за секунди та підсумує макроси.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Плани</span>
+          <h3>Гнучкі цілі й нагадування</h3>
+          <p>Встановлюй цілі на вагу та активність, отримуй розумні підказки й мʼякі пуш‑нагадування без надокучливості.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Аналітика</span>
+          <h3>Щоденний прогрес</h3>
+          <p>Чисті графіки, річні огляди та смарт‑рекомендації допомагають тримати курс без стресу.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Офлайн</span>
+          <h3>Працює навіть без мережі</h3>
+          <p>Записуй прийоми їжі у літаку чи метро — усе синхронізується, щойно зʼявиться інтернет.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integrations -->
+  <section id="integrations" class="section">
+    <div class="container">
+      <h2>Працює з улюбленими гаджетами</h2>
+      <p class="kicker">Обʼєднай тренування, сон і харчування в одній стрічці.</p>
+      <div class="logos" aria-label="Лого інтеграцій (плейсхолдери)">
+        <div class="logo-tile">HealthKit</div>
+        <div class="logo-tile">Google Fit</div>
+        <div class="logo-tile">Garmin</div>
+        <div class="logo-tile">Fitbit</div>
+        <div class="logo-tile">Strava</div>
+        <div class="logo-tile">Polar</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark mode callout -->
+  <section class="section">
+    <div class="container callout">
+      <div class="panel">
+        <h2>Темна тема — з коробки</h2>
+        <p class="kicker">Приємний контраст, економія батареї та фокус на головному.</p>
+        <ul>
+          <li>Авто‑перемикання за системними налаштуваннями.</li>
+          <li>Контекстні поради прямо на екрані додавання страви.</li>
+          <li>Щотижневі дрібні оновлення без важких апдейтів.</li>
+        </ul>
+      </div>
+      <div class="phone" aria-hidden="true">
+        <div class="phone-screen" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop')"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2>Спільнота говорить</h2>
+      <p class="kicker">Реальні історії користувачів, не рекламні штампи.</p>
+      <div class="grid-2">
+        <div class="quote">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <strong>Олена</strong>
+            <p class="muted">«Скинула −6 кг за 2 місяці, не рахуючи вручну жодної калорії. Фото — це магія!»</p>
+          </div>
+        </div>
+        <div class="quote">
+          <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=400&auto=format&fit=crop')"></div>
+          <div>
+            <strong>Денис</strong>
+            <p class="muted">«Додаю рецепти сімʼї, застосунок сам розкладає на інгредієнти. Дуже зручно.»</p>
+          </div>
+        </div>
+        <div class="quote">
+          <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop')"></div>
+          <div>
+            <strong>Ігор</strong>
+            <p class="muted">«Підтягнув білок, перестав переїдати. Сповіщення мʼякі, не дратують.»</p>
+          </div>
+        </div>
+        <div class="quote">
+          <div class="avatar" style="background-image:url('https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=400&auto=format&fit=crop')"></div>
+          <div>
+            <strong>Марія</strong>
+            <p class="muted">«Імпорт з годинника + аналіз харчування — нарешті все в одному місці.»</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" style="padding-top:36px">
+        <div class="ratings">
+          <div class="rating-card">
+            <div class="stars">★★★★★</div>
+            <div class="muted">4.9 / 5 середній рейтинг</div>
+          </div>
+          <div class="rating-card">
+            <div class="stars">★★★★★</div>
+            <div class="muted">100k+ відгуків</div>
+          </div>
+          <div class="rating-card">
+            <div class="stars">★★★★★</div>
+            <div class="muted">№1 у категорії «Здоровʼя»*</div>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:8px">* Плейсхолдер для промо — замініть на реальні дані.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section">
+    <div class="container cta-banner">
+      <div>
+        <h3>Почни безкоштовно сьогодні</h3>
+        <p class="muted">3 дні на тест без привʼязки. Скасувати можна будь-коли.</p>
+      </div>
+      <div class="badges">
+        <a class="badge" href="#">App Store</a>
+        <a class="badge" href="#">Google Play</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand"><span class="logo"></span><span>NutriLens</span></div>
+        <p class="muted">© <span id="year"></span> NutriLens. Усі права захищено.</p>
+      </div>
+      <div>
+        <h4>Юридичне</h4>
+        <a class="muted" href="#">Політика конфіденційності</a><br/>
+        <a class="muted" href="#">Умови користування</a>
+      </div>
+      <div>
+        <h4>Компанія</h4>
+        <a class="muted" href="#">Контакти</a><br/>
+        <a class="muted" href="#">Преса</a>
+      </div>
+      <div>
+        <h4>Соціальні мережі</h4>
+        <a class="muted" href="#">Instagram</a><br/>
+        <a class="muted" href="#">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+ 
