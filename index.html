@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="utf-8" />
@@ -86,13 +86,6 @@
   <div class="topbar">
     <div class="container nav">
       <a class="brand" href="#">
-<!--         <span class="logo">
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
-            <circle cx="32" cy="32" r="30" fill="var(--brand-light)"/>
-            <path d="M20 32a12 12 0 0124 0h2a8 8 0 010 16H20a8 8 0 010-16h0z" fill="white"/>
-            <text x="50%" y="54%" text-anchor="middle" font-size="12" fill="var(--brand)" font-weight="700">AI</text>
-          </svg>
-        </span> -->
         <span class="logo">
           <img src="/images/minute2.png" alt="RainAI Logo" style="width:28px; height:28px;">
         </span>
@@ -143,6 +136,87 @@
   <footer>
     <div class="container">
       <p>© <span id="year"></span> RainAI. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+ -->
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RainAI — похвилинний, погодинний і поденний AI прогноз погоди та радар опадів</title>
+  <meta name="description" content="RainAI — точний похвилинний, погодинний і поденний AI прогноз погоди, інтелектуальні сповіщення про дощ, радар опадів та розширений прогноз до 10 днів." />
+  <meta name="keywords" content="RainAI, Rain, AI, прогноз погоди, AI прогноз погоди, похвилинний прогноз погоди, погодинний прогноз погоди, поденний прогноз погоди, радар опадів, дощ, попередження про дощ, погода на тиждень, прогноз опадів" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* стилі без змін */
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="logo">
+          <img src="/images/minute2.png" alt="RainAI Logo" style="width:28px; height:28px;">
+        </span>
+        RainAI
+      </a>
+      <nav class="menu">
+        <a href="#features">Можливості</a>
+        <a href="#download" class="cta-btn">App Store</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="container">
+    <div>
+      <h1>RainAI — AI прогноз погоди з похвилинною, погодинною і поденною точністю та радаром опадів</h1>
+      <p>RainAI повідомить, коли почнеться дощ, надасть похвилинний прогноз погоди, погодинний та поденний прогноз, а також покаже радар опадів у реальному часі.</p>
+      <p>Точний AI прогноз погоди на 7–10 днів з інтелектуальними сповіщеннями та детальною метеоінформацією.</p>
+      <a id="download" class="cta-btn" href="https://apps.apple.com/us/app/rainai-weather-radar-forecast/id6503618146">Завантажити в App Store</a>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80" alt="Прогноз погоди RainAI під час дощу"/>
+    </div>
+  </header>
+
+  <section id="features" class="container features">
+    <div class="card">
+      <h3>Миттєві сповіщення про дощ</h3>
+      <p>Отримуйте push-повідомлення, коли дощ наближається, щоб вчасно бути під парасолькою. RainAI використовує AI для максимально точного прогнозу.</p>
+    </div>
+    <div class="card">
+      <h3>Похвилинний, погодинний і поденний прогноз</h3>
+      <p>Детальна інформація про температуру, опади, вітер, вологість, тиск, індекс ультрафіолету, схід і захід сонця, фази місяця. AI прогноз погоди на 10 днів вперед.</p>
+    </div>
+    <div class="card">
+      <h3>Радар опадів</h3>
+      <p>Візуалізуйте пересування дощових хмар у реальному часі за допомогою інтерактивного радара опадів.</p>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <div class="container">
+      <h2>Скачайте RainAI — AI прогноз погоди</h2>
+      <p>Отримайте похвилинний, погодинний та поденний прогноз прямо зараз. Безкоштовно в App Store.</p>
+      <a class="cta-btn" href="https://apps.apple.com/us/app/rainai-weather-radar-forecast/id6503618146">Завантажити</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> RainAI — точний прогноз погоди та радар опадів. Усі права захищені.</p>
     </div>
   </footer>
 
