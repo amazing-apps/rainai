@@ -1,5 +1,4 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="utf-8" />
@@ -64,8 +63,18 @@
     .card {background: #f9f9f9; padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow);}
     .card h3 {margin-top: 0;}
     .card p {color: var(--muted);}
-    .cta-section {background: var(--brand-light); color: white; text-align: center; padding: 40px 20px; border-radius: var(--radius); margin: 60px 0;}
-    .cta-section h2 {margin: 0 0 10px;}
+    .cta-section {
+      background: var(--brand-light);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin: 60px 0 0 0;
+      width: 100%;
+    }
+    .cta-section .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
     footer {padding: 40px 0; border-top: 1px solid #eee; text-align: center; color: var(--muted);}
     @media (max-width: 900px) {
       header {grid-template-columns: 1fr;}
@@ -120,10 +129,12 @@
     </div>
   </section>
 
-  <div class="container cta-section">
-    <h2>Скачайте RainAI зараз</h2>
-    <p>Безкоштовно в App Store</p>
-    <a class="cta-btn" href="https://apps.apple.com/us/app/rainai-weather-radar-forecast/id6503618146">Завантажити</a>
+  <div class="cta-section">
+    <div class="container">
+      <h2>Скачайте RainAI зараз</h2>
+      <p>Безкоштовно в App Store</p>
+      <a class="cta-btn" href="https://apps.apple.com/us/app/rainai-weather-radar-forecast/id6503618146">Завантажити</a>
+    </div>
   </div>
 
   <footer>
@@ -135,4 +146,3 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
