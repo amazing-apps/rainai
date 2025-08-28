@@ -7,11 +7,56 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>...same as index...</header>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="SunAI home">
+        <img src="logo.png" alt="SunAI logo" />
+        <span>SunAI</span>
+      </a>
+      <nav class="center-links" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="mailto:hello@temp.app" data-i18n="nav.jobs">Jobs</a>
+        <a href="mailto:hello@temp.app" data-i18n="nav.press">Press</a>
+      </nav>
+      <div class="right-cta">
+        <a class="app-badge" href="https://apps.apple.com/us/app/">
+          <!-- same App Store badge SVG -->
+        </a>
+        <select class="lang-switch" id="lang">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
   <main>
     <h1>About Us</h1>
     <p>RainAI is built by a passionate team combining AI and radar technology to deliver precise forecasts.</p>
   </main>
-  <footer>...same as index...</footer>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <div class="foot-col">
+        <a class="brand" href="index.html">
+          <img src="logo.png" alt="SunAI logo" />
+          <span>SunAI</span>
+        </a>
+        <a class="app-badge" href="https://apps.apple.com/us/app/">...</a>
+      </div>
+      <div class="foot-col">
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms of use</a>
+      </div>
+      <div class="foot-col">
+        <a href="about.html" data-i18n="footer.about">About us</a>
+        <a href="mailto:hello@temp.app" data-i18n="footer.contact">Contact</a>
+        <a href="legal.html" data-i18n="footer.legal">Legal notice</a>
+      </div>
+    </div>
+  </footer>
+  
 </body>
 </html>
