@@ -265,21 +265,45 @@
       }
     };
 
-    // Отримуємо ?lang=fr
+    const updateI18n = (lang) => {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = i18n[lang][key];
+    if (val) el.textContent = val;
+  });
+
+  if (i18n[lang]['meta.title']) document.title = i18n[lang]['meta.title'];
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && i18n[lang]['meta.desc']) metaDesc.setAttribute('content', i18n[lang]['meta.desc']);
+  document.documentElement.lang = lang;
+
+  // 🔹 зберігаємо мову
+  localStorage.setItem('lang', lang);
+};
+
+const langSelect = document.getElementById('lang');
+
+// 🔹 1. Читаємо мову з URL
 const urlParams = new URLSearchParams(window.location.search);
 const langFromUrl = urlParams.get('lang');
 
-// Якщо є параметр у URL — використовуємо його, інакше localStorage
+// 🔹 2. Якщо нема — дивимось у localStorage
 const savedLang = langFromUrl || localStorage.getItem('lang') || 'en';
-updateI18n(savedLang);
-langSelect.value = savedLang;
 
-// При зміні select додаємо ?lang=...
+// 🔹 3. Проставляємо у select і оновлюємо інтерфейс
+langSelect.value = savedLang;
+updateI18n(savedLang);
+
+// 🔹 4. При зміні select перезавантажуємо з ?lang=...
 langSelect.addEventListener('change', (e) => {
   const newLang = e.target.value;
   localStorage.setItem('lang', newLang);
-  window.location.search = `?lang=${newLang}`; // перезавантажує з параметром
+
+  // оновлюємо URL, щоб при переході на інші сторінки мова збереглася
+  const baseUrl = window.location.pathname.split('/').pop(); // наприклад "about.html"
+  window.location.href = `${baseUrl}?lang=${newLang}`;
 });
+
 
   </script>
 </body>
