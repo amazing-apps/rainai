@@ -265,23 +265,22 @@
       }
     };
 
+   const langSelect = document.getElementById('lang');
+    
     const updateI18n = (lang) => {
       document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const val = i18n[lang][key];
-        if (val) el.textContent = val;
-      });
-      // update document title and description for the chosen language
-      if (i18n[lang]['meta.title']) document.title = i18n[lang]['meta.title'];
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc && i18n[lang]['meta.desc']) metaDesc.setAttribute('content', i18n[lang]['meta.desc']);
-      document.documentElement.lang = lang;
-    };
+      const key = el.getAttribute('data-i18n');
+      const val = i18n[lang][key];
+      if (val) el.textContent = val;
+    });
 
-    const langSelect = document.getElementById('lang');
-    langSelect.addEventListener('change', (e) => updateI18n(e.target.value));
-    // Default to EN already in markup; ensure texts reflect selection
-    updateI18n('en');
+    if (i18n[lang]['meta.title']) document.title = i18n[lang]['meta.title'];
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && i18n[lang]['meta.desc']) metaDesc.setAttribute('content', i18n[lang]['meta.desc']);
+    document.documentElement.lang = lang;
+
+    // 🔹 Запам’ятовуємо вибір
+    localStorage.setItem('lang', lang);
   </script>
 </body>
 </html>
