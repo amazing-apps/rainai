@@ -8,14 +8,29 @@
 
 
 <url>
-  <loc>https://amazing-apps.net/</loc>
-  <lastmod>2025-05-05T15:41:48+00:00</lastmod>
+  <loc>https://rainai.app/</loc>
+  <lastmod>2025-10-28T08:35:34+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://amazing-apps.net/terms.html</loc>
-  <lastmod>2025-05-05T15:41:48+00:00</lastmod>
+  <loc>https://rainai.app/privacy.html</loc>
+  <lastmod>2025-10-28T08:35:34+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rainai.app/terms.html</loc>
+  <lastmod>2025-10-28T08:35:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rainai.app/about.html</loc>
+  <lastmod>2025-10-28T08:35:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rainai.app/index.html</loc>
+  <lastmod>2025-10-28T08:35:34+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
